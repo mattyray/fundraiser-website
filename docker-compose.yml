@@ -1,4 +1,3 @@
-
 services:
   web:
     build: .
@@ -9,8 +8,13 @@ services:
       - "8000:8000"
     depends_on:
       - db
+    env_file:
+      - .env  # ✅ Load environment variables from `.env`
+
   db:
     image: postgres:13
+    env_file:
+      - .env  # ✅ Load database credentials from `.env`
     volumes:
       - postgres_data:/var/lib/postgresql/data
 
