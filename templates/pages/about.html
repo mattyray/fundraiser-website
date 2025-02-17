@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}About Me - Matt Raynor{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <h1 class="text-center fw-bold">About Me</h1>
+    <p class="lead text-center">My Journey from the Deep Sea to the Digital World</p>
+
+    <!-- Intro Section -->
+    <div class="row align-items-center mt-4">
+        <div class="col-md-6">
+            <img src="{% static 'images/meArt.jpg' %}" class="img-fluid rounded shadow" alt="Matt Raynor Artwork">
+        </div>
+        <div class="col-md-6">
+            <h2 class="fw-bold text-primary">Who I Am</h2>
+            <p>Hi, I'm <strong>Matthew Raynor</strong>. I spent six years as a deep-sea commercial fisherman, facing the unpredictable power of the ocean. But life took a turn when I suffered a serious spinal cord injury. Instead of giving up, I turned my resilience toward something new—coding.</p>
+            <p>From learning Python key by key, I became a self-taught web developer, using Django to create projects that matter. Now, my goal is to build a new life outside of the nursing home, launch a career in tech, and inspire others to overcome adversity.</p>
+        </div>
+    </div>
+
+    <!-- Mission Section -->
+    <div class="row align-items-center mt-5">
+        <div class="col-md-6">
+            <h2 class="fw-bold text-success">Why I Built This Fundraiser</h2>
+            <p>For the past year and a half, I’ve been in a nursing home that isn’t ideal. I need proper care, independence, and an environment where I can focus on my career.</p>
+            <p>This fundraiser isn’t just about moving—it's about reclaiming my life and proving that no obstacle is too great with the right mindset and support.</p>
+        </div>
+        <div class="col-md-6">
+            <img src="{% static 'images/mecullboard.jpg' %}" class="img-fluid rounded shadow" alt="Matt Cullboard">
+        </div>
+    </div>
+
+    <!-- Embedded Video -->
+    <div class="row mt-5">
+        <div class="col text-center">
+            <h2 class="fw-bold text-danger">Why I Need Your Help</h2>
+            <p class="lead">Watch this video to understand my story and the impact your support can have.</p>
+            <div class="ratio ratio-16x9">
+                <iframe src="https://www.youtube.com/embed/roG1jJVrHWk" allowfullscreen></iframe>
+            </div>
+        </div>
+    </div>
+
+    <!-- Call to Action -->
+    <div class="text-center mt-5">
+        <h3 class="fw-bold">Be Part of My Journey</h3>
+        <p>Your support means the world. Every donation, share, or message of encouragement brings me one step closer to a better future.</p>
+        <a href="https://gofundme.com/YOUR_FUNDRAISER_LINK" class="btn btn-lg btn-primary fw-bold">Donate Now</a>
+    </div>
+</div>
+{% endblock %}
