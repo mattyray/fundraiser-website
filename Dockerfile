@@ -1,3 +1,4 @@
+# Use official Python image as base
 FROM python:3.10.4-slim-bullseye
 
 # Set environment variables
@@ -10,7 +11,10 @@ WORKDIR /code
 
 # Install dependencies
 COPY ./requirements.txt .
-RUN pip install -r requirements.txt
+RUN pip install --no-cache-dir -r requirements.txt
 
-# Copy project
+# Copy project files
 COPY . .
+
+# Run Gunicorn
+CMD ["gunicorn", "django_project.wsgi", "--bind", "0.0.0.0:8000"]
