@@ -14,8 +14,11 @@ DEBUG = env.bool("DJANGO_DEBUG", default=False)
 ALLOWED_HOSTS = env.list("DJANGO_ALLOWED_HOSTS", default=[
     "localhost",
     "127.0.0.1",
-    "fundraisersite-368ef514df2e.herokuapp.com"
+    "fundraisersite-368ef514df2e.herokuapp.com",
+    "mattsfreedomfundraiser.com",
+    "www.mattsfreedomfundraiser.com"
 ])
+
 
 # Installed Apps
 INSTALLED_APPS = [
