@@ -37,3 +37,6 @@ class HomePageView(TemplateView):
 
 class AboutPageView(TemplateView):
     template_name = 'pages/about.html'
+
+class OtherWaysToHelpView(TemplateView):
+    template_name = 'pages/other_ways_to_help.html'
