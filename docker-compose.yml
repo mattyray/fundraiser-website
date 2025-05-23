@@ -1,4 +1,3 @@
-version: "3.9"
 
 services:
   web:
@@ -16,6 +15,9 @@ services:
       - "DJANGO_SECURE_HSTS_PRELOAD=False"
       - "DJANGO_SESSION_COOKIE_SECURE=False"
       - "DJANGO_CSRF_COOKIE_SECURE=False"
+    volumes:
+      - .:/code
+      - ./chatwidget_data:/usr/local/lib/python3.10/site-packages/chatwidget/data
   db:
     image: postgres:13
     volumes:

@@ -33,6 +33,7 @@ INSTALLED_APPS = [
     "embed_video",
     "crispy_forms",
     "crispy_bootstrap5",
+    "chatwidget",
 ]
 CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
 CRISPY_TEMPLATE_PACK = "bootstrap5"
