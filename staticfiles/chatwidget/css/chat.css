@@ -1,24 +1,23 @@
-/* Chat container position */
+/* Chat container wrapper */
 #chat-container {
   position: fixed;
   bottom: 20px;
   right: 20px;
-  width: 340px;
-  max-height: 550px;
   z-index: 9999;
   font-family: 'Poppins', sans-serif;
 }
 
-/* Chat box itself */
+/* Chat Widget Panel */
 .chat-widget {
   background: white;
   border: 1px solid #ccc;
   border-radius: 12px;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.15);
   display: none;
-  overflow: hidden;
   flex-direction: column;
-  height: 100%;
+  width: 360px;
+  max-height: 600px;
+  overflow: hidden;
   transform: translateY(20px);
   opacity: 0;
   transition: all 0.3s ease-in-out;
@@ -45,7 +44,7 @@
 /* Body */
 .chat-body {
   padding: 1em;
-  max-height: 360px;
+  max-height: 400px;
   overflow-y: auto;
   background-color: #f9f9f9;
   font-size: 0.95em;
@@ -92,7 +91,7 @@
   margin-right: auto;
 }
 
-/* Toggle button */
+/* Toggle Button */
 .chat-toggle {
   position: fixed;
   bottom: 20px;
@@ -107,7 +106,7 @@
   cursor: pointer;
 }
 
-/* Markdown formatting */
+/* Markdown styling */
 .chat-body strong {
   font-weight: bold;
 }
@@ -123,4 +122,27 @@
   background: #eee;
   padding: 2px 4px;
   border-radius: 4px;
+}
+
+/* 🔁 Responsive Layout */
+@media (max-width: 480px) {
+  .chat-widget {
+    width: 90vw;
+    right: 5vw;
+    bottom: 80px;
+    max-height: 70vh;
+  }
+
+  .chat-toggle {
+    bottom: 10px;
+    right: 10px;
+    font-size: 0.85em;
+    padding: 0.4em 0.9em;
+  }
+}
+.chat-toggle {
+  z-index: 9990;
+}
+.chat-widget {
+  z-index: 9999;
 }
