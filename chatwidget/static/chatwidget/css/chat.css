@@ -1,64 +1,113 @@
 /* chatwidget/static/chatwidget/css/chat.css */
-.chat-widget {
+
+#chat-container {
   position: fixed;
-  bottom: 70px;
+  bottom: 20px;
   right: 20px;
-  background: white;
-  border: 1px solid #ddd;
-  width: 320px;
-  max-height: 500px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.2);
-  display: none;
+  width: 340px;
+  max-height: 550px;
   z-index: 9999;
-  border-radius: 10px;
-  overflow: hidden;
-  font-family: sans-serif;
+  font-family: 'Poppins', sans-serif;
 }
 
+/* Chat Widget Box */
+.chat-widget {
+  background: white;
+  border: 1px solid #ccc;
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.15);
+  display: none;
+  overflow: hidden;
+  flex-direction: column;
+  height: 100%;
+}
+
+/* Header */
 .chat-header {
-  background-color: #222;
+  background-color: #1e3c72;
   color: white;
-  padding: 0.6em;
-  font-weight: bold;
+  padding: 0.75em 1em;
+  font-weight: 600;
+  font-size: 1rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
+/* Chat Body */
 .chat-body {
-  padding: 0.8em;
-  max-height: 350px;
+  padding: 1em;
+  max-height: 360px;
   overflow-y: auto;
+  background-color: #f9f9f9;
+  font-size: 0.95em;
+  line-height: 1.5;
+  scroll-behavior: smooth;
+  white-space: pre-wrap;
+}
+
+/* Input */
+.chat-input {
+  border-top: 1px solid #eee;
+  padding: 0.75em;
+  background-color: #fff;
+}
+
+.chat-input input {
+  width: 100%;
+  padding: 0.5em;
+  border-radius: 6px;
+  border: 1px solid #ccc;
   font-size: 0.9em;
 }
 
-.chat-input {
-  border-top: 1px solid #eee;
-  padding: 0.5em;
-}
-
+/* Messages */
 .chat-message {
-  margin-bottom: 0.5em;
+  margin-bottom: 0.75em;
 }
 
 .chat-message.user {
   text-align: right;
-  color: #333;
+  color: #222;
 }
 
 .chat-message.ai {
   text-align: left;
-  color: #006600;
+  color: #1e3c72;
 }
 
+/* Toggle Button */
 .chat-toggle {
   position: fixed;
   bottom: 20px;
   right: 20px;
-  background-color: #222;
+  background-color: #1e3c72;
   color: white;
-  padding: 0.6em 1.2em;
+  padding: 0.5em 1.1em;
   border: none;
   border-radius: 20px;
-  z-index: 9999;
+  font-size: 0.9em;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  cursor: pointer;
+}
+
+/* Markdown & formatting support */
+.chat-body strong {
+  font-weight: bold;
+}
+
+.chat-body em {
+  font-style: italic;
+}
+
+.chat-body ul {
+  padding-left: 1.2em;
+  margin-bottom: 1em;
+}
+
+.chat-body code {
+  font-family: monospace;
+  background: #eee;
+  padding: 2px 4px;
+  border-radius: 4px;
 }
