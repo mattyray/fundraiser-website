@@ -1,5 +1,4 @@
-/* chatwidget/static/chatwidget/css/chat.css */
-
+/* Chat container position */
 #chat-container {
   position: fixed;
   bottom: 20px;
@@ -10,7 +9,7 @@
   font-family: 'Poppins', sans-serif;
 }
 
-/* Chat Widget Box */
+/* Chat box itself */
 .chat-widget {
   background: white;
   border: 1px solid #ccc;
@@ -20,6 +19,15 @@
   overflow: hidden;
   flex-direction: column;
   height: 100%;
+  transform: translateY(20px);
+  opacity: 0;
+  transition: all 0.3s ease-in-out;
+}
+
+.chat-widget.show {
+  display: flex;
+  transform: translateY(0);
+  opacity: 1;
 }
 
 /* Header */
@@ -34,7 +42,7 @@
   align-items: center;
 }
 
-/* Chat Body */
+/* Body */
 .chat-body {
   padding: 1em;
   max-height: 360px;
@@ -55,8 +63,8 @@
 
 .chat-input input {
   width: 100%;
-  padding: 0.5em;
-  border-radius: 6px;
+  padding: 0.5em 1em;
+  border-radius: 20px;
   border: 1px solid #ccc;
   font-size: 0.9em;
 }
@@ -64,19 +72,27 @@
 /* Messages */
 .chat-message {
   margin-bottom: 0.75em;
+  display: inline-block;
+  padding: 0.5em 0.75em;
+  border-radius: 10px;
+  max-width: 90%;
 }
 
 .chat-message.user {
   text-align: right;
+  background-color: #f0f0f0;
   color: #222;
+  margin-left: auto;
 }
 
 .chat-message.ai {
   text-align: left;
-  color: #1e3c72;
+  background-color: #e6f4ea;
+  color: #1a5d1a;
+  margin-right: auto;
 }
 
-/* Toggle Button */
+/* Toggle button */
 .chat-toggle {
   position: fixed;
   bottom: 20px;
@@ -91,20 +107,17 @@
   cursor: pointer;
 }
 
-/* Markdown & formatting support */
+/* Markdown formatting */
 .chat-body strong {
   font-weight: bold;
 }
-
 .chat-body em {
   font-style: italic;
 }
-
 .chat-body ul {
   padding-left: 1.2em;
   margin-bottom: 1em;
 }
-
 .chat-body code {
   font-family: monospace;
   background: #eee;
