@@ -2,9 +2,14 @@ from pathlib import Path
 from environs import Env  
 import os
 
+
+
 # Initialize Env and read environment variables
 env = Env()
 env.read_env()
+
+OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
+
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 SECURE_PROXY_SSL_HEADER = ("HTTP_X_FORWARDED_PROTO", "https")  # newg

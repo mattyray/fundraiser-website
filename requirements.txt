@@ -9,4 +9,5 @@ crispy-bootstrap5
 whitenoise
 gunicorn
 marshmallow>=3.13.0
-django-chatwidget==0.1.0
+openai==1.78.1
+

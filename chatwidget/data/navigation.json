@@ -1,0 +1,37 @@
+[
+  {
+    "title": "Home",
+    "url": "/",
+    "description": "Landing page for Matt's Fundraiser. Includes donation call-to-action, update videos, and summary of Matt’s transition to independent living."
+  },
+  {
+    "title": "Donate",
+    "url": "https://gofund.me/00dfe227",
+    "description": "GoFundMe page where you can contribute to support Matt’s move out of the nursing home and into accessible housing."
+  },
+  {
+    "title": "About",
+    "url": "/about/",
+    "description": "Learn about Matt Raynor’s journey — from commercial fisherman to quadriplegic coder and artist. Includes videos and Matt's story."
+  },
+  {
+    "title": "Contact",
+    "url": "/contact/",
+    "description": "Send Matt a message directly via a custom contact form. Great for offering help, opportunities, or encouragement."
+  },
+  {
+    "title": "Blog",
+    "url": "/blog/",
+    "description": "Read Matt's latest reflections, writing, and updates. Posts often include videos and cover recovery, spirituality, and tech."
+  },
+  {
+    "title": "Other Ways to Help",
+    "url": "/other-ways-to-help/",
+    "description": "Explore ways to support Matt beyond donations — including helping with housing leads, caregiving, and job referrals."
+  },
+  {
+    "title": "MatthewRaynor.com",
+    "url": "https://www.matthewraynor.com",
+    "description": "Matt’s full personal site with access to his store, book, portfolio, blog, photography, and social media links."
+  }
+]
