@@ -1,0 +1,126 @@
+/* Chat container position */
+#chat-container {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 340px;
+  max-height: 550px;
+  z-index: 9999;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Chat box itself */
+.chat-widget {
+  background: white;
+  border: 1px solid #ccc;
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.15);
+  display: none;
+  overflow: hidden;
+  flex-direction: column;
+  height: 100%;
+  transform: translateY(20px);
+  opacity: 0;
+  transition: all 0.3s ease-in-out;
+}
+
+.chat-widget.show {
+  display: flex;
+  transform: translateY(0);
+  opacity: 1;
+}
+
+/* Header */
+.chat-header {
+  background-color: #1e3c72;
+  color: white;
+  padding: 0.75em 1em;
+  font-weight: 600;
+  font-size: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Body */
+.chat-body {
+  padding: 1em;
+  max-height: 360px;
+  overflow-y: auto;
+  background-color: #f9f9f9;
+  font-size: 0.95em;
+  line-height: 1.5;
+  scroll-behavior: smooth;
+  white-space: pre-wrap;
+}
+
+/* Input */
+.chat-input {
+  border-top: 1px solid #eee;
+  padding: 0.75em;
+  background-color: #fff;
+}
+
+.chat-input input {
+  width: 100%;
+  padding: 0.5em 1em;
+  border-radius: 20px;
+  border: 1px solid #ccc;
+  font-size: 0.9em;
+}
+
+/* Messages */
+.chat-message {
+  margin-bottom: 0.75em;
+  display: inline-block;
+  padding: 0.5em 0.75em;
+  border-radius: 10px;
+  max-width: 90%;
+}
+
+.chat-message.user {
+  text-align: right;
+  background-color: #f0f0f0;
+  color: #222;
+  margin-left: auto;
+}
+
+.chat-message.ai {
+  text-align: left;
+  background-color: #e6f4ea;
+  color: #1a5d1a;
+  margin-right: auto;
+}
+
+/* Toggle button */
+.chat-toggle {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #1e3c72;
+  color: white;
+  padding: 0.5em 1.1em;
+  border: none;
+  border-radius: 20px;
+  font-size: 0.9em;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  cursor: pointer;
+}
+
+/* Markdown formatting */
+.chat-body strong {
+  font-weight: bold;
+}
+.chat-body em {
+  font-style: italic;
+}
+.chat-body ul {
+  padding-left: 1.2em;
+  margin-bottom: 1em;
+}
+.chat-body code {
+  font-family: monospace;
+  background: #eee;
+  padding: 2px 4px;
+  border-radius: 4px;
+}
