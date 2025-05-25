@@ -1,9 +1,14 @@
+# chatwidget/openai_utils.py
 import os
 import json
 from django.conf import settings
-from openai import OpenAI
+from openai import OpenAI, OpenAIError
 
-client = OpenAI(api_key=settings.OPENAI_API_KEY)
+api_key = getattr(settings, "OPENAI_API_KEY", None)
+if not api_key:
+    raise ValueError("❌ OPENAI_API_KEY is not set in environment or settings.")
+
+client = OpenAI(api_key=api_key)
 
 def load_knowledge_base():
     base_path = os.path.join(os.path.dirname(__file__), "data")
@@ -27,20 +32,19 @@ def load_knowledge_base():
 
 def get_openai_response(user_message):
     context_blocks = load_knowledge_base()
-    system_prompt = "You are a helpful assistant. Use the following context to answer questions about Matt and his fundraiser site:\n\n"
+    system_prompt = "You are a helpful assistant. Use the following context to answer questions:\n\n"
 
     for block in context_blocks:
-        title = block.get("title", "")
-        description = block.get("content") or block.get("description") or ""
-        system_prompt += f"- {title}: {description}\n"
+        system_prompt += f"- {block.get('title', '')}: {block.get('content', '')}\n"
 
-    print("🔍 SYSTEM PROMPT SENT TO OPENAI:\n", system_prompt)  # Optional debug print
-
-    response = client.chat.completions.create(
-        model="gpt-4",
-        messages=[
-            {"role": "system", "content": system_prompt},
-            {"role": "user", "content": user_message}
-        ]
-    )
-    return response.choices[0].message.content.strip()
+    try:
+        response = client.chat.completions.create(
+            model="gpt-4",
+            messages=[
+                {"role": "system", "content": system_prompt},
+                {"role": "user", "content": user_message}
+            ]
+        )
+        return response.choices[0].message.content.strip()
+    except OpenAIError as e:
+        return f"⚠️ OpenAI Error: {str(e)}"
